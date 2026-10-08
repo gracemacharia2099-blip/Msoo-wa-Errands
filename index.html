@@ -1,300 +1,844 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Msoo Wa Errands | Your Reliable Sourcing Plug</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<title>Msoo Wa Errands | Your Trusted Errands & Sourcing Plug</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #222;
-            background: #f7f7f7;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        header {
-            background: #111;
-            color: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        header h1 {
-            font-size: 25px;
-        }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #f7f7f7;
+    line-height: 1.6;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-        }
+/* HEADER */
+header {
+    background: #111;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        .hero {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+.topbar {
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-        .hero h2 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-        .hero p {
-            font-size: 19px;
-            max-width: 700px;
-            margin: auto;
-        }
+.logo {
+    width: 55px;
+    height: 55px;
+    border: 2px solid #d4af37;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4af37;
+    font-size: 27px;
+    font-weight: bold;
+}
 
-        .button {
-            display: inline-block;
-            margin-top: 25px;
-            background: white;
-            color: #111;
-            padding: 13px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.brand h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+}
 
-        section {
-            padding: 55px 8%;
-        }
+.brand p {
+    color: #ccc;
+    font-size: 12px;
+}
 
-        section h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 30px;
-        }
+.contact-top {
+    font-size: 14px;
+    color: #ddd;
+}
 
-        .about {
-            background: white;
-            text-align: center;
-        }
+nav {
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 14px;
+}
 
-        .about p {
-            max-width: 800px;
-            margin: auto;
-            font-size: 17px;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
-        }
+nav a:hover {
+    color: #d4af37;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
+/* HERO */
+.hero {
+    min-height: 570px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
 
-        .card h3 {
-            margin-bottom: 10px;
-        }
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    animation: changeBackground 18s infinite;
+}
 
-        .prices {
-            background: white;
-        }
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.58);
+}
 
-        .price-list {
-            max-width: 750px;
-            margin: auto;
-        }
+@keyframes changeBackground {
+    0%, 28% {
+        background-image: url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80");
+    }
 
-        .price-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
+    33%, 61% {
+        background-image: url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80");
+    }
 
-        .contact {
-            text-align: center;
-            background: #111;
-            color: white;
-        }
+    66%, 94% {
+        background-image: url("https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=1600&q=80");
+    }
 
-        .contact a {
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-        }
+    95%, 100% {
+        background-image: url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80");
+    }
+}
 
-        footer {
-            background: #000;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    padding: 30px;
+}
 
-        @media (max-width: 600px) {
-            .hero h2 {
-                font-size: 32px;
-            }
+.hero h2 {
+    font-size: 52px;
+    margin-bottom: 18px;
+}
 
-            nav {
-                margin-top: 10px;
-            }
+.hero h2 span {
+    color: #d4af37;
+}
 
-            nav a {
-                margin-left: 8px;
-                font-size: 14px;
-            }
+.hero p {
+    font-size: 20px;
+    margin-bottom: 28px;
+}
 
-            .price-item {
-                gap: 20px;
-            }
-        }
-    </style>
+.button {
+    display: inline-block;
+    background: #d4af37;
+    color: #111;
+    padding: 14px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    background: white;
+}
+
+/* GENERAL */
+section {
+    padding: 70px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #666;
+}
+
+/* ABOUT */
+.about {
+    background: white;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* SERVICES */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.09);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.service-content {
+    padding: 22px;
+}
+
+.service-content h3 {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.service-content p {
+    color: #666;
+}
+
+/* WHY US */
+.why-us {
+    background: #111;
+    color: white;
+}
+
+.why-us .section-title p {
+    color: #ccc;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.why-card {
+    text-align: center;
+    padding: 25px;
+}
+
+.why-icon {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.why-card h3 {
+    margin-bottom: 8px;
+    color: #d4af37;
+}
+
+/* HOW IT WORKS */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+.step {
+    background: white;
+    padding: 28px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.number {
+    width: 45px;
+    height: 45px;
+    background: #111;
+    color: #d4af37;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* PRICES */
+.prices {
+    background: white;
+}
+
+.price-list {
+    max-width: 850px;
+    margin: auto;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.price-row strong {
+    color: #111;
+}
+
+/* CATEGORIES */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.category {
+    background: #111;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 30px;
+}
+
+/* CONTACT */
+.contact {
+    background: #222;
+    color: white;
+    text-align: center;
+}
+
+.contact p {
+    margin: 8px 0;
+}
+
+.contact a {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+/* FLOATING BOOK BUTTON */
+.book-us {
+    position: fixed;
+    right: 20px;
+    bottom: 22px;
+    z-index: 2000;
+    background: #d4af37;
+    color: #111;
+    padding: 15px 21px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212,175,55,0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 12px rgba(212,175,55,0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(212,175,55,0);
+    }
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+}
+
+footer strong {
+    color: white;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+    .topbar {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .brand {
+        justify-content: center;
+    }
+
+    .brand h1 {
+        font-size: 23px;
+    }
+
+    .contact-top {
+        width: 100%;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    section {
+        padding: 55px 5%;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .price-row {
+        font-size: 14px;
+    }
+
+    .book-us {
+        right: 15px;
+        bottom: 15px;
+        padding: 13px 18px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Msoo Wa Errands</h1>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#prices">Prices</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+    <div class="topbar">
 
-<section class="hero">
-    <h2>Your Reliable Sourcing Plug</h2>
-    <p>
-        We help you shop, source stock, run errands and send parcels
-        around Nairobi and beyond — saving you time, money and stress.
-    </p>
+        <div class="brand">
 
-    <a class="button" href="https://wa.me/254753737988">
-        WhatsApp Us
-    </a>
-</section>
+            <div class="logo">M</div>
 
-<section class="about" id="about">
-    <h2>About Msoo Wa Errands</h2>
+            <div>
+                <h1>MSOO WA ERRANDS</h1>
+                <p>Your Reliable Errands & Sourcing Plug</p>
+            </div>
 
-    <p>
-        Msoo Wa Errands is your trusted plug for sourcing and running
-        errands in Nairobi and its environs. We specialize in
-        CBD, Kamukunji and Eastleigh sourcing, helping individuals
-        and businesses get what they need without the stress of
-        travelling and shopping themselves.
-    </p>
-</section>
-
-<section id="services">
-    <h2>Our Services</h2>
-
-    <div class="services">
-
-        <div class="card">
-            <h3>📦 Parcel Services</h3>
-            <p>Pick up and send parcels within Nairobi CBD and beyond.</p>
         </div>
 
-        <div class="card">
-            <h3>🛍️ Personal Shopping</h3>
-            <p>We shop for you from different stores according to your needs.</p>
-        </div>
-
-        <div class="card">
-            <h3>📋 Stock Sourcing</h3>
-            <p>We source wholesale and retail stock from Kamukunji and Eastleigh.</p>
-        </div>
-
-        <div class="card">
-            <h3>🏪 Wholesaler Sourcing</h3>
-            <p>Need stock from specific wholesalers? We can source it for you.</p>
-        </div>
-
-        <div class="card">
-            <h3>🏢 Office Errands</h3>
-            <p>We handle various office errands and deliveries on your behalf.</p>
-        </div>
-
-        <div class="card">
-            <h3>🚚 Upcountry Delivery</h3>
-            <p>We help arrange sourcing, combining and sending of goods upcountry.</p>
+        <div class="contact-top">
+            📞 0753 737 988 &nbsp; | &nbsp;
+            ✉ msoowaerrands2@gmail.com
         </div>
 
     </div>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#services">SERVICES</a>
+        <a href="#prices">PRICES</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+
+        <h2>
+            YOUR TRUSTED <span>ERRANDS</span>
+            & SOURCING PLUG
+        </h2>
+
+        <p>
+            We source, shop, pick, send and deliver —
+            saving you time, transport costs and stress.
+        </p>
+
+        <a class="button" href="https://wa.me/254753737988">
+            BOOK US ON WHATSAPP
+        </a>
+
+    </div>
+
 </section>
 
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="section-title">
+        <h2>About Msoo Wa Errands</h2>
+        <p>We make errands easier for you.</p>
+    </div>
+
+    <div class="about-content">
+
+        <p>
+            Msoo Wa Errands is your reliable sourcing and errands partner
+            in Nairobi and its environs. We specialize in sourcing from
+            CBD, Kamukunji and Eastleigh, helping individuals and businesses
+            get what they need without the stress of travelling and shopping
+            themselves.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="section-title">
+        <h2>What We Do</h2>
+        <p>Professional and reliable services tailored to your needs.</p>
+    </div>
+
+    <div class="services">
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=800&q=80">
+            <div class="service-content">
+                <h3>🛍️ Personal Shopping</h3>
+                <p>
+                    We shop for you from different stores according
+                    to your shopping list and budget.
+                </p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1586528116493-da8b1d9d4b43?auto=format&fit=crop&w=800&q=80">
+            <div class="service-content">
+                <h3>📦 Parcel Services</h3>
+                <p>
+                    We pick up and send your parcels safely and conveniently.
+                </p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80">
+            <div class="service-content">
+                <h3>🏪 Stock Sourcing</h3>
+                <p>
+                    We source wholesale and retail stock from
+                    Kamukunji, Eastleigh and other locations.
+                </p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80">
+            <div class="service-content">
+                <h3>🏢 Office Errands</h3>
+                <p>
+                    We handle various office errands and deliveries
+                    on your behalf.
+                </p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?auto=format&fit=crop&w=800&q=80">
+            <div class="service-content">
+                <h3>🚚 Upcountry Delivery</h3>
+                <p>
+                    We help arrange sourcing, combining and sending
+                    goods upcountry.
+                </p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80">
+            <div class="service-content">
+                <h3>🤝 Chaperone Service</h3>
+                <p>
+                    Need someone to accompany you while sourcing?
+                    We can help make the process easier.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY CHOOSE US -->
+
+<section class="why-us">
+
+    <div class="section-title">
+        <h2>Why Choose Us?</h2>
+        <p>We make sourcing and errands simple.</p>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <div class="why-icon">⏱️</div>
+            <h3>Save Time</h3>
+            <p>
+                Let us handle the running around while you focus
+                on what matters.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">💰</div>
+            <h3>Save Costs</h3>
+            <p>
+                Avoid unnecessary transport, food and travelling expenses.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">📍</div>
+            <h3>Local Sourcing</h3>
+            <p>
+                We know where to source products around Nairobi.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">⭐</div>
+            <h3>Reliable Service</h3>
+            <p>
+                We handle your errands with care and professionalism.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section>
+
+    <div class="section-title">
+        <h2>How It Works</h2>
+        <p>Booking an errand is simple.</p>
+    </div>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="number">1</div>
+            <h3>Contact Us</h3>
+            <p>Send us your request through WhatsApp.</p>
+        </div>
+
+        <div class="step">
+            <div class="number">2</div>
+            <h3>Share Your List</h3>
+            <p>Tell us what you need sourced or done.</p>
+        </div>
+
+        <div class="step">
+            <div class="number">3</div>
+            <h3>We Handle It</h3>
+            <p>We source, shop or complete the errand for you.</p>
+        </div>
+
+        <div class="step">
+            <div class="number">4</div>
+            <h3>Delivery</h3>
+            <p>Your items are sent or delivered as agreed.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRICES -->
+
 <section class="prices" id="prices">
-    <h2>Our Prices</h2>
+
+    <div class="section-title">
+        <h2>Our Service Charges</h2>
+        <p>Simple and transparent pricing.</p>
+    </div>
 
     <div class="price-list">
 
-        <div class="price-item">
+        <div class="price-row">
             <span>Parcel picking & sending within CBD</span>
             <strong>KSh 300</strong>
         </div>
 
-        <div class="price-item">
+        <div class="price-row">
             <span>Kamukunji & Eastleigh</span>
             <strong>KSh 400</strong>
         </div>
 
-        <div class="price-item">
+        <div class="price-row">
             <span>Specific wholesaler sourcing</span>
             <strong>From KSh 500</strong>
         </div>
 
-        <div class="price-item">
+        <div class="price-row">
             <span>Different wholesaler stores</span>
             <strong>From KSh 1,000</strong>
         </div>
 
-        <div class="price-item">
+        <div class="price-row">
             <span>Personal shopping from different stores</span>
             <strong>From KSh 500</strong>
         </div>
 
-        <div class="price-item">
+        <div class="price-row">
             <span>Office errands</span>
             <strong>From KSh 400</strong>
         </div>
 
     </div>
+
 </section>
 
-<section class="contact" id="contact">
-    <h2>Place Your Order</h2>
 
-    <p>Need something sourced or an errand done?</p>
-    <p>Contact us today and let Msoo Wa Errands do it for you.</p>
+<!-- CATEGORIES -->
+
+<section>
+
+    <div class="section-title">
+        <h2>What Can We Source?</h2>
+        <p>From everyday shopping to business stock.</p>
+    </div>
+
+    <div class="categories">
+
+        <div class="category">Electronics</div>
+        <div class="category">Kitchen & Household</div>
+        <div class="category">Beddings</div>
+        <div class="category">Furniture</div>
+        <div class="category">Hardware</div>
+        <div class="category">Instruments</div>
+        <div class="category">Office Supplies</div>
+        <div class="category">Business Stock</div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+        <h2>Need An Errand Done?</h2>
+        <p>Let Msoo Wa Errands handle it for you.</p>
+    </div>
+
+    <p>📞 <a href="tel:+254753737988">0753 737 988</a></p>
+
+    <p>📧 <a href="mailto:msoowaerrands2@gmail.com">
+        msoowaerrands2@gmail.com
+    </a></p>
 
     <br>
 
-    <p>📱 <a href="tel:+254753737988">0753 737 988</a></p>
-    <p>📧 <a href="mailto:msoowaerrands2@gmail.com">msoowaerrands2@gmail.com</a></p>
-
     <a class="button" href="https://wa.me/254753737988">
-        Chat on WhatsApp
+        CHAT WITH US ON WHATSAPP
     </a>
+
 </section>
 
+
+<!-- FLOATING BOOK US -->
+
+<a class="book-us" href="https://wa.me/254753737988">
+    📲 BOOK US
+</a>
+
+
+<!-- FOOTER -->
+
 <footer>
-    <p>© 2026 Msoo Wa Errands. All Rights Reserved.</p>
-    <p>Plug wa Kila Kitu.</p>
+
+    <p>
+        © 2026 <strong>Msoo Wa Errands</strong>.
+        All Rights Reserved.
+    </p>
+
+    <p>
+        Your Reliable Errands & Sourcing Plug.
+    </p>
+
 </footer>
 
 </body>
